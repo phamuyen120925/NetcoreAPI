@@ -1,0 +1,23 @@
+@model MvcMovie.Models.Student
+
+@{
+    ViewData["Title"] = "Student";
+}
+
+<h1>Student Form</h1>
+
+<h3>@ViewBag.message</h3>
+
+<form asp-action="Index" method="post">
+    <label>Student Code:</label>
+    <input type="text" name="StudentCode" />
+
+    <br />
+
+    <label>Full Name:</label>
+    <input type="text" name="FullName" />
+
+    <br />
+
+    <input type="submit" value="Send" />
+</form>
