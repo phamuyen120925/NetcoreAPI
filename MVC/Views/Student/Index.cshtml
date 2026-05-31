@@ -1,0 +1,24 @@
+@model IEnumerable<MVC.Models.ViewModels.StudentFacultyVM>
+
+<h2>Danh sách sinh viên</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Họ tên</th>
+            <th>Khoa</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentID</td>
+                <td>@item.FullName</td>
+                <td>@item.FacultyName</td>
+            </tr>
+        }
+    </tbody>
+</table>

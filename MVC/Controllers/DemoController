@@ -1,0 +1,19 @@
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
+namespace MVC.Controllers
+{
+    public class HelloWorldController : Controller
+    { 
+        // GET: /HelloWorld/
+        public string Index()
+        {
+            return "PHAMTHIUYEN2221050369";
+        } 
+        // GET: /HelloWorld/Welcome/ 
+
+        public string Welcome()
+        {
+            return "PHAMTHIUYEN2221050369";
+        }
+    }
+}

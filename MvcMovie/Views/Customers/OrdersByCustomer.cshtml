@@ -1,0 +1,45 @@
+@model MvcMovie.Models.Customer
+
+<h2>Thông tin khách hàng</h2>
+
+<p><b>Tên:</b> @Model?.Name</p>
+<p><b>Email:</b> @Model?.Email</p>
+<p>Số đơn hàng: @(Model?.Orders?.Count ?? 0)</p>
+
+<hr />
+
+<h3>Danh sách đơn hàng</h3>
+
+@if (Model?.Orders != null && Model.Orders.Any())
+{
+    foreach (var order in Model.Orders)
+    {
+        <h4>Đơn hàng #@order.OrderId - @order.OrderDate</h4>
+
+        <table border="1">
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+            </tr>
+
+            @if (order.OrderDetails != null)
+            {
+                foreach (var item in order.OrderDetails)
+                {
+                    <tr>
+                        <td>@item.Product?.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            }
+        </table>
+
+        <br />
+    }
+}
+else
+{
+    <p>Không có đơn hàng nào.</p>
+}
