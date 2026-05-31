@@ -1,0 +1,29 @@
+@model MVC.Models.Order
+
+<h2>Thêm đơn hàng</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Mã đơn hàng</label>
+        <input asp-for="OrderID" />
+    </div>
+
+    <div>
+        <label>Ngày đặt</label>
+        <input asp-for="OrderDate" />
+    </div>
+
+    <div>
+        <label>Khách hàng</label>
+
+        <select asp-for="CustomerID"
+                asp-items="ViewBag.CustomerID">
+        </select>
+    </div>
+
+    <button type="submit">
+        Lưu
+    </button>
+
+</form>

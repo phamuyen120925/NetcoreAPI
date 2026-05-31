@@ -1,0 +1,26 @@
+@model IEnumerable<MVC.Models.ViewModels.CustomerOrderVM>
+
+<h2>Lịch sử mua hàng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Khách hàng</th>
+            <th>Đơn hàng</th>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerName</td>
+                <td>@item.OrderID</td>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

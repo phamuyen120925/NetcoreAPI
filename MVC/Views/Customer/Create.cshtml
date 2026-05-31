@@ -1,0 +1,24 @@
+@model MVC.Models.Customer
+
+<h2>Thêm khách hàng</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Mã KH</label>
+        <input asp-for="CustomerID" />
+    </div>
+
+    <div>
+        <label>Họ tên</label>
+        <input asp-for="FullName" />
+    </div>
+
+    <div>
+        <label>Địa chỉ</label>
+        <input asp-for="Address" />
+    </div>
+
+    <button type="submit">Lưu</button>
+
+</form>

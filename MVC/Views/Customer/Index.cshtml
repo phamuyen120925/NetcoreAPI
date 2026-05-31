@@ -1,0 +1,31 @@
+@model IEnumerable<MVC.Models.Customer>
+
+<h2>Danh sách khách hàng</h2>
+
+<p>
+    <a asp-action="Create">Thêm khách hàng</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Mã KH</th>
+        <th>Họ tên</th>
+        <th>Địa chỉ</th>
+        <th>Chi tiết</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.CustomerID</td>
+            <td>@item.FullName</td>
+            <td>@item.Address</td>
+            <td>
+                <a asp-action="OrderHistory"
+                    asp-route-id="@item.CustomerID">
+                     Xem đơn hàng
+               </a>
+             </td>
+        </tr>
+    }
+</table>
