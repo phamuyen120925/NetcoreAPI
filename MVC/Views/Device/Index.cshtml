@@ -1,0 +1,81 @@
+@model IEnumerable<MVC.Models.Device>
+
+@{
+    ViewData["Title"] = "Danh sách thiết bị";
+}
+
+<h1>Danh sách thiết bị</h1>
+
+<form method="get">
+
+    <input type="text"
+           name="searchString"
+           placeholder="Tìm thiết bị..." />
+
+    <button type="submit">
+        Tìm
+    </button>
+
+</form>
+
+<br />
+
+<p>
+    <a asp-action="Create">Thêm thiết bị</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã thiết bị</th>
+            <th>Tên thiết bị</th>
+            <th>Nhà cung cấp</th>
+            <th>Loại thiết bị</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.DeviceID
+            </td>
+
+            <td>
+                @item.DeviceName
+            </td>
+
+            <td>
+                @item.Supplier?.SupplierName
+            </td>
+
+            <td>
+                @item.DeviceCategory?.CategoryName
+            </td>
+
+            <td>
+                <a asp-action="Edit"
+                   asp-route-id="@item.DeviceID">
+                    Sửa
+                </a>
+                |
+
+                <a asp-action="Details"
+                   asp-route-id="@item.DeviceID">
+                    Chi tiết
+                </a>
+                |
+
+                <a asp-action="Delete"
+                   asp-route-id="@item.DeviceID">
+                    Xóa
+                </a>
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>

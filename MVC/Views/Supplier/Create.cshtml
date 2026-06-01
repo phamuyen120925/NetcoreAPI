@@ -1,0 +1,26 @@
+@model MVC.Models.Supplier
+
+<h2>Thêm nhà cung cấp</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Mã NCC</label>
+        <input asp-for="SupplierID" />
+    </div>
+
+    <div>
+        <label>Tên NCC</label>
+        <input asp-for="SupplierName" />
+    </div>
+
+    <div>
+        <label>Địa chỉ</label>
+        <input asp-for="Address" />
+    </div>
+
+    <button type="submit">
+        Lưu
+    </button>
+
+</form>

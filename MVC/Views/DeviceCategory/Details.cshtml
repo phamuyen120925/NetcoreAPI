@@ -1,0 +1,17 @@
+@model MVC.Models.DeviceCategory
+
+<h2>Chi tiết loại thiết bị</h2>
+
+<p>
+    <strong>Mã loại:</strong>
+    @Model.CategoryID
+</p>
+
+<p>
+    <strong>Tên loại:</strong>
+    @Model.CategoryName
+</p>
+
+<a asp-action="Index">
+    Quay lại
+</a>

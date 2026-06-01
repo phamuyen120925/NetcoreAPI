@@ -1,0 +1,59 @@
+@model IEnumerable<MVC.Models.ImportDetail>
+
+@{
+    ViewData["Title"] = "Danh sách nhập kho";
+}
+
+<h1>Danh sách nhập kho</h1>
+
+<p>
+    <a asp-action="Create">Thêm chi tiết nhập kho</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã phiếu nhập</th>
+            <th>Tên thiết bị</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @item.ImportReceipt?.ImportID
+            </td>
+
+            <td>
+                @item.Device?.DeviceName
+            </td>
+
+            <td>
+                @item.Quantity
+            </td>
+
+            <td>
+                @item.UnitPrice
+            </td>
+
+            <td>
+                @(item.Quantity * item.UnitPrice)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            </td>
+
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+@model MVC.Models.DeviceCategory
+
+<h2>Sửa loại thiết bị</h2>
+
+<form asp-action="Edit">
+
+    <input type="hidden" asp-for="CategoryID" />
+
+    <div>
+        <label>Mã loại</label>
+        <input asp-for="CategoryID" readonly />
+    </div>
+
+    <div>
+        <label>Tên loại</label>
+        <input asp-for="CategoryName" />
+    </div>
+
+    <br />
+
+    <button type="submit">
+        Lưu
+    </button>
+
+</form>

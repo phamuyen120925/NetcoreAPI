@@ -1,0 +1,28 @@
+@model IEnumerable<MVC.Models.Supplier>
+
+<h2>Danh sách nhà cung cấp</h2>
+
+<p>
+    <a asp-action="Create">
+        Thêm nhà cung cấp
+    </a>
+</p>
+
+<table class="table">
+
+    <tr>
+        <th>Mã NCC</th>
+        <th>Tên NCC</th>
+        <th>Địa chỉ</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.SupplierID</td>
+            <td>@item.SupplierName</td>
+            <td>@item.Address</td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,21 @@
+@model MVC.Models.DeviceCategory
+
+<h2>Thêm loại thiết bị</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Mã loại</label>
+        <input asp-for="CategoryID" />
+    </div>
+
+    <div>
+        <label>Tên loại</label>
+        <input asp-for="CategoryName" />
+    </div>
+
+    <button type="submit">
+        Lưu
+    </button>
+
+</form>

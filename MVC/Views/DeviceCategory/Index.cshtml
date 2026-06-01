@@ -1,0 +1,62 @@
+@model IEnumerable<MVC.Models.DeviceCategory>
+
+<h2>Danh sách loại thiết bị</h2>
+
+<form method="get">
+
+    <input type="text"
+           name="searchString"
+           placeholder="Tìm kiếm..." />
+
+    <button type="submit">
+        Tìm
+    </button>
+
+</form>
+
+<br />
+
+<p>
+    <a asp-action="Create">
+        Thêm loại thiết bị
+    </a>
+</p>
+
+<table class="table">
+
+    <tr>
+        <th>Mã loại</th>
+        <th>Tên loại</th>
+        <th>Chức năng</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+
+            <td>
+                <a asp-action="Edit"
+                   asp-route-id="@item.CategoryID">
+                    Sửa
+                </a>
+
+                |
+
+                <a asp-action="Details"
+                   asp-route-id="@item.CategoryID">
+                    Chi tiết
+                </a>
+
+                |
+
+                <a asp-action="Delete"
+                   asp-route-id="@item.CategoryID">
+                    Xóa
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

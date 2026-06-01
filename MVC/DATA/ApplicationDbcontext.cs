@@ -16,5 +16,16 @@ namespace MVC.Data
         public DbSet<Product> Product { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
+
+        public DbSet<DeviceCategory> DeviceCategory { get; set; }
+
+        public DbSet<Device> Device { get; set; }
+        public DbSet<ImportReceipt> ImportReceipt { get; set; }
+
+        public DbSet<ImportDetail> ImportDetail { get; set; }
+        public DbSet<ExportReceipt> ExportReceipt { get; set; }
+
+        public DbSet<ExportDetail> ExportDetail { get; set; }
     }
 }

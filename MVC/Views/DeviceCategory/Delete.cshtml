@@ -1,0 +1,26 @@
+@model MVC.Models.DeviceCategory
+
+<h2>Xóa loại thiết bị</h2>
+
+<p>Bạn có chắc muốn xóa?</p>
+
+<p>
+    <strong>@Model.CategoryName</strong>
+</p>
+
+<form asp-action="Delete">
+
+    <input type="hidden"
+           asp-for="CategoryID" />
+
+    <button type="submit">
+        Xóa
+    </button>
+
+</form>
+
+<br />
+
+<a asp-action="Index">
+    Hủy
+</a>
