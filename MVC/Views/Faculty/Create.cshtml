@@ -1,0 +1,19 @@
+@model MVC.Models.Faculty
+
+<h2>Thêm khoa</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Mã khoa</label>
+        <input asp-for="FacultyID" />
+    </div>
+
+    <div>
+        <label>Tên khoa</label>
+        <input asp-for="FacultyName" />
+    </div>
+
+    <button type="submit">Lưu</button>
+
+</form>

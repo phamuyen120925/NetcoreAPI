@@ -1,0 +1,22 @@
+@model IEnumerable<MVC.Models.Faculty>
+
+<h2>Danh sách khoa</h2>
+
+<p>
+    <a asp-action="Create">Thêm khoa</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Mã khoa</th>
+        <th>Tên khoa</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.FacultyID</td>
+            <td>@item.FacultyName</td>
+        </tr>
+    }
+</table>
